@@ -13,16 +13,26 @@ npm install --save @raketa-cms/raketa-mce
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from '@raketa-cms/raketa-mce'
-import '@raketa-cms/raketa-mce/dist/index.css'
+import { ReactMCE } from '@raketa-cms/raketa-mce'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return (
+    <ReactMCE
+      label="Text"
+      value="<p>Create React <img src='https://placehold.it/100x100' /> Library Example 😄</p>"
+      customStyles={[
+        { key: 'highlight', title: 'Highlight', inline: 'span', classes: 'highlight' },
+        { key: 'small', title: 'Small', inline: 'span', classes: 'text-small' },
+      ]}
+      onChange={value => console.log(value)}
+    />
+  )
 }
+
+export default App
+
 ```
 
 ## License

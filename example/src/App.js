@@ -7,8 +7,17 @@ const App = () => {
   return (
     <div>
       <ReactMCE
-        label="blah"
+        label="Text"
         value="<p>Create React <img src='https://placehold.it/100x100' /> Library Example 😄</p>"
+        customStyles={[
+          { key: 'highlight', title: 'Highlight', inline: 'span', classes: 'highlight' },
+          { key: 'small', title: 'Small', inline: 'span', classes: 'text-small' },
+        ]}
+        onChange={value => console.log(value)}
+      />
+      <ReactMCE
+        label="Content"
+        value="<p>Another code</p>"
         customStyles={[
           { key: 'highlight', title: 'Highlight', inline: 'span', classes: 'highlight' },
           { key: 'small', title: 'Small', inline: 'span', classes: 'text-small' },
