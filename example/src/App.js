@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { RichEditor } from '@raketa-cms/raketa-mce'
+import { RichText } from '@raketa-cms/raketa-mce'
 import '@raketa-cms/raketa-mce/dist/index.css'
 
 const App = () => {
   return (
     <div>
-      <RichEditor
+      <RichText
         label="Text"
         value="<p>Create React <img src='https://placehold.it/100x100' /> Library Example 😄</p>"
         customStyles={[
@@ -16,7 +16,7 @@ const App = () => {
         onChange={value => console.log(value)}
       />
 
-      <RichEditor
+      <RichText
         label="Content"
         value="<p>Another code</p>"
         onChange={value => console.log(value)}

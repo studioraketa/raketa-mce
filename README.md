@@ -15,11 +15,11 @@ npm install --save @raketa-cms/raketa-mce
 ```jsx
 import React from 'react'
 
-import { RichEditor } from '@raketa-cms/raketa-mce'
+import { RichText } from '@raketa-cms/raketa-mce'
 
 const App = () => {
   return (
-    <RichEditor
+    <RichText
       label="Text"
       value="<p>Create React <img src='https://placehold.it/100x100' /> Library Example 😄</p>"
       customStyles={[

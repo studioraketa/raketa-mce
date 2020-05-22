@@ -1,1 +1,1 @@
-export { default as RichEditor } from './ReactMCE'
+export { default as RichText } from './ReactMCE'
