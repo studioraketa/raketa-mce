@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { FormControl, Label } from 'raketa-ui'
+// import { FormControl, Label } from 'raketa-ui'
 
 import 'tinymce/tinymce'
 import 'tinymce/themes/silver/theme'
@@ -27,12 +27,14 @@ const getCustomStyles = (customStyles) => {
   const formats = {}
   const style_formats = []
 
-  customStyles.forEach((style) => {
-    const { key, title, ...rest } = style
+  if (customStyles) {
+    customStyles.forEach((style) => {
+      const { key, title, ...rest } = style
 
-    formats[key] = rest
-    style_formats.push({ title, format: key })
-  })
+      formats[key] = rest
+      style_formats.push({ title, format: key })
+    })
+  }
 
   return {
     formats,
@@ -50,8 +52,18 @@ const ReactMCE = ({ label, value, onChange, customStyles, ...props }) => {
   const styleSelect = customStyles ? 'styleselect' : ''
 
   return (
-    <FormControl>
-      {label && <Label>{label}</Label>}
+    <div style={{ marginBottom: '1em' }}>
+      {label && (
+        <label
+          style={{
+            fontSize: '12px',
+            fontWeight: 'bold',
+            textTransform: 'uppercase'
+          }}
+        >
+          {label}
+        </label>
+      )}
 
       <Editor
         initialValue={value}
@@ -79,7 +91,7 @@ const ReactMCE = ({ label, value, onChange, customStyles, ...props }) => {
         }}
         onEditorChange={handleEditorChange}
       />
-    </FormControl>
+    </div>
   )
 }
 
