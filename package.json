@@ -1,6 +1,6 @@
 {
   "name": "@raketa-cms/raketa-mce",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TinyMCE wrapper for Raketa CMS",
   "author": "studioraketa",
   "license": "MIT",
